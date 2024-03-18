@@ -4,7 +4,7 @@ import ru.netology.stats.StatsService;
 
 public class StatsServiceTest {
     @Test
-    public void sumAllSales(){
+    public void sumAllSales() {
         StatsService service = new StatsService();
         long[] s = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
@@ -15,7 +15,7 @@ public class StatsServiceTest {
     }
 
     @Test
-    public void arithmeticalMeanSales(){
+    public void arithmeticalMeanSales() {
         StatsService service = new StatsService();
         long[] s = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
@@ -26,7 +26,7 @@ public class StatsServiceTest {
     }
 
     @Test
-    public void maxSales(){
+    public void maxSales() {
         StatsService service = new StatsService();
         long[] s = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
@@ -37,7 +37,7 @@ public class StatsServiceTest {
     }
 
     @Test
-    public void minSales(){
+    public void minSales() {
         StatsService service = new StatsService();
         long[] s = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
@@ -46,18 +46,20 @@ public class StatsServiceTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void minCount(){
+    public void minCount() {
         StatsService service = new StatsService();
         long[] s = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expected = 7;
+        int expected = 5;
         int actual = service.minCount(s);
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void maxCount(){
+    public void maxCount() {
         StatsService service = new StatsService();
         long[] s = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
