@@ -11,12 +11,10 @@ public class StatsService {
     }
 
     public long arithmeticalMeanSales(long[] sales) {
-        long arithmeticalMeanSales = 0;
-        for (int i = 0; i < sales.length; i++) {
-            arithmeticalMeanSales = arithmeticalMeanSales + sales[i];
-        }
+        long sum = sumAllSales(sales);
+        long arithmeticalMeanSales = sum / sales.length;
 
-        return arithmeticalMeanSales / sales.length; // возвращает среднее арифметическое
+        return arithmeticalMeanSales; // возвращает среднее арифметическое
     }
 
     public int maxSales(long[] sales) {
@@ -45,11 +43,7 @@ public class StatsService {
 
     public int minCount(long[] sales) {
         int minCount = 0;
-        long sumAllSales = 0;
-        for (int i = 0; i < sales.length; i++) {
-            sumAllSales = sumAllSales + sales[i];
-        }
-        int arithmeticalMeanSales = (int) sumAllSales / sales.length;
+        long arithmeticalMeanSales = arithmeticalMeanSales(sales);
 
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < arithmeticalMeanSales) {
@@ -57,16 +51,12 @@ public class StatsService {
             }
         }
 
-        return minCount;
+        return minCount; //возвращает меньще среднего значения
     }
 
     public int maxCount(long[] sales) {
         int maxCount = 0;
-        long sumAllSales = 0;
-        for (int i = 0; i < sales.length; i++) {
-            sumAllSales = sumAllSales + sales[i];
-        }
-        int arithmeticalMeanSales = (int) sumAllSales / sales.length;
+        long arithmeticalMeanSales = arithmeticalMeanSales(sales);
 
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > arithmeticalMeanSales) {
@@ -74,6 +64,6 @@ public class StatsService {
             }
         }
 
-        return maxCount;
+        return maxCount; //возвращает больше среднего значения
     }
 }
